@@ -1,8 +1,10 @@
-# drop database pizzaria;
-create database pizzaria;
+/* create database pizzaria;
 use pizzaria;
 show tables;
+drop database pizzaria;
+*/
 
+/*
 create table tb_funcionarios (--
 id_funcionario integer auto_increment not null primary key,
 rg_funcionario integer,
@@ -12,22 +14,39 @@ nome_funcionario varchar(15),
 f_funcionario varchar(15)
 )engine= Innodb default charset =utf8;
 alter table tb_funcionarios add f_funcionario varchar(15);
-# drop table tb_funcionarios;
+*/
 
+create table tb_cliente(--
+id_cliente integer not null auto_increment primary key,
+nome_cliente varchar(15),
+rua varchar(10),
+numero integer,
+bairro varchar(10)
+)engine= Innodb default charset =utf8;
+alter table tb_cliente add sexo varchar(10);
+alter table tb_cliente add cidade varchar(10);
+alter table tb_cliente add idade int;
+
+show tables;
 
 create table tb_vendidos(--
 id_cliente integer,
 id_venda int not null auto_increment primary key,
 CONSTRAINT id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente (id_cliente)
 )engine= Innodb default charset =utf8;
-#describe tb_vendidos;
-# drop table tb_vendidos;
+
+describe id_cliente;
+
 alter table tb_vendidos add dt_venda date;
 alter table tb_vendidos add valor_venda float;
 alter table tb_vendidos add id_pizza int;
 alter table tb_vendidos add foreign key (id_pizza) references tb_cardapio (id_pizza);
 alter table tb_vendidos add id_pagamento int;
 alter table tb_vendidos add foreign key (id_pagamento) references tb_pagamento (id_pagamento);
+
+show tables;
+select * from tb_vendidos;
+
 
 create table tb_cardapio(
 id_pizza integer not null auto_increment primary key,
@@ -51,19 +70,7 @@ nome_ingrediente varchar(10)
 describe tb_ingredientes;
 
 
-create table tb_cliente(--
-id_cliente integer not null auto_increment primary key,
-nome_cliente varchar(15),
-rua varchar(10),
-numero integer,
-bairro varchar(10)
 
-
-)engine= Innodb default charset =utf8;
-alter table tb_cliente add sexo varchar(10);
-describe tb_cliente;
-alter table tb_cliente add cidade varchar(10);
-alter table tb_cliente add idade int;
 
 
 create table tb_entrega(
