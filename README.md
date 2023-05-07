@@ -1,2 +1,2 @@
 # pizzariadb-mysql
- Base de dados de uma pizzaria.
+Este repositório é uma base de dados desenvolvida inicialmente na faculdade, a cada dia melhor desenvolvido.
