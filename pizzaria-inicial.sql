@@ -34,17 +34,32 @@ CONSTRAINT id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente (id_cliente
 )engine= Innodb default charset =utf8;
 
 
+create table tb_ingredientes(
+id_ingrediente int not null auto_increment primary key,
+nome_ingrediente varchar(10)
+
+);
+
 create table tb_cardapio(
 id_pizza integer not null auto_increment primary key,
 nome_pizza varchar(10),
 tipo_pizza varchar(10)
-
 )engine= Innodb default charset =utf8;
-drop table tb_cardapio;
+
 alter table tb_cardapio add id_ingrediente int;
 alter table tb_cardapio add foreign key (id_ingrediente) references tb_ingredientes (id_ingrediente);
 alter table tb_cardapio add valor_pizza float;
 describe tb_cardapio;
+
+
+create table tb_pagamento(
+id_pagamento int not null auto_increment primary key,
+f_pagamento varchar(10)
+)engine= Innodb default charset =utf8;
+drop table tb_pagamento;
+alter table tb_pagamento ADD dt_pagamento date;
+alter table tb_pagamento add valor_pago float;
+describe tb_pagamento;
 
 
 alter table tb_vendidos add dt_venda date;
@@ -58,11 +73,7 @@ show tables;
 select * from tb_vendidos;
 
 
-create table tb_ingredientes(
-id_ingrediente int not null auto_increment primary key,
-nome_ingrediente varchar(10)
 
-);
 describe tb_ingredientes;
 
 
@@ -71,12 +82,12 @@ describe tb_ingredientes;
 
 create table tb_entrega(
 id_entrega int not null auto_increment primary key
--- id_funcionario integer,
--- id_cliente integer,
--- id_venda integer
--- CONSTRAINT id_funcionario FOREIGN KEY (id_funcionario) REFERENCES tb_funcionarios (id_funcionario)
--- CONSTRAINT id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente (id_cliente), -- relacionar com cliente e funcionário
--- CONSTRAINT id_venda FOREIGN KEY (id_venda) REFERENCES tb_vendidos (id_venda)
+id_funcionario integer,
+id_cliente integer,
+id_venda integer
+CONSTRAINT id_funcionario FOREIGN KEY (id_funcionario) REFERENCES tb_funcionarios (id_funcionario)
+CONSTRAINT id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente (id_cliente), -- relacionar com cliente e funcionário
+CONSTRAINT id_venda FOREIGN KEY (id_venda) REFERENCES tb_vendidos (id_venda)
 )engine= Innodb default charset =utf8; 
 -- Relacionando tb_entrega com a tb_funcionario
 describe tb_entrega;
@@ -111,14 +122,7 @@ update tb_entrega set dt_entrega = '2018-02-20' where id_entrega =11;
 
 drop table tb_entrega;
 
-create table tb_pagamento(
-id_pagamento int not null auto_increment primary key,
-f_pagamento varchar(10)
-)engine= Innodb default charset =utf8;
-drop table tb_pagamento;
-alter table tb_pagamento ADD dt_pagamento date;
-alter table tb_pagamento add valor_pago float;
-describe tb_pagamento;
+
 
 show tables;
 select * from tb_funcionarios; -- TABELA FUNCIONARIOS
