@@ -25,7 +25,7 @@ dt_pagamento date,
 valor_pago float
 )engine= Innodb default charset = utf8mb4;
 
-create table tb_vendas(
+create table tb_venda(
 id_cliente integer,
 id_venda int not null auto_increment primary key,
 constraint id_cliente foreign key (id_cliente) references tb_cliente (id_cliente), -- linkando id_cliente com a tb_vendas
@@ -51,8 +51,21 @@ constraint id_ingrediente foreign key (id_ingrediente) references tb_ingrediente
 valor_pizza float
 )engine= Innodb default charset = utf8mb4;
 
+create table tb_entrega(
+id_entrega int not null auto_increment primary key,
+id_funcionario integer,
+id_cliente integer,
+id_venda integer,
+constraint id_funcionario foreign key (id_funcionario) references tb_funcionario (id_funcionario), -- Linkando id_funcionario com tb_funcionario
+constraint id_cliente_segfk foreign key (id_cliente) references tb_cliente (id_cliente), /* Linkando id_cliente com tb_cliente obs: a chave estranjeira id_cliente
+já existe na tabela tb_venda, pos isso é preciso criar um nome diferente para esta chave, chamei fe id_cliente_segfk */
+constraint id_venda foreign key (id_venda) references tb_venda (id_venda) -- Linkando id_venda com tb_venda
+)engine= Innodb default charset = utf8mb4;
 
 
+
+use pizzaria;
+drop table tb_entrega;
 show tables;
-
+describe tb_cliente;
 

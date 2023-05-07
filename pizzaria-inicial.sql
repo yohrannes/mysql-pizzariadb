@@ -59,8 +59,6 @@ f_pagamento varchar(10)
 drop table tb_pagamento;
 alter table tb_pagamento ADD dt_pagamento date;
 alter table tb_pagamento add valor_pago float;
-describe tb_pagamento;
-
 
 alter table tb_vendidos add dt_venda date;
 alter table tb_vendidos add valor_venda float;
@@ -68,16 +66,6 @@ alter table tb_vendidos add id_pizza int;
 alter table tb_vendidos add foreign key (id_pizza) references tb_cardapio (id_pizza);
 alter table tb_vendidos add id_pagamento int;
 alter table tb_vendidos add foreign key (id_pagamento) references tb_pagamento (id_pagamento);
-
-show tables;
-select * from tb_vendidos;
-
-
-
-describe tb_ingredientes;
-
-
-
 
 
 create table tb_entrega(
@@ -88,7 +76,9 @@ id_venda integer
 CONSTRAINT id_funcionario FOREIGN KEY (id_funcionario) REFERENCES tb_funcionarios (id_funcionario)
 CONSTRAINT id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente (id_cliente), -- relacionar com cliente e funcionário
 CONSTRAINT id_venda FOREIGN KEY (id_venda) REFERENCES tb_vendidos (id_venda)
-)engine= Innodb default charset =utf8; 
+)engine= Innodb default charset =utf8;
+
+
 -- Relacionando tb_entrega com a tb_funcionario
 describe tb_entrega;
 alter table tb_entrega add id_funcionario int;
