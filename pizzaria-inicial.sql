@@ -1,10 +1,9 @@
-/* create database pizzaria;
+create database pizzaria;
 use pizzaria;
 show tables;
 drop database pizzaria;
-*/
 
-/*
+
 create table tb_funcionarios (--
 id_funcionario integer auto_increment not null primary key,
 rg_funcionario integer,
@@ -14,7 +13,6 @@ nome_funcionario varchar(15),
 f_funcionario varchar(15)
 )engine= Innodb default charset =utf8;
 alter table tb_funcionarios add f_funcionario varchar(15);
-*/
 
 create table tb_cliente(--
 id_cliente integer not null auto_increment primary key,
@@ -35,7 +33,19 @@ id_venda int not null auto_increment primary key,
 CONSTRAINT id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente (id_cliente)
 )engine= Innodb default charset =utf8;
 
-describe id_cliente;
+
+create table tb_cardapio(
+id_pizza integer not null auto_increment primary key,
+nome_pizza varchar(10),
+tipo_pizza varchar(10)
+
+)engine= Innodb default charset =utf8;
+drop table tb_cardapio;
+alter table tb_cardapio add id_ingrediente int;
+alter table tb_cardapio add foreign key (id_ingrediente) references tb_ingredientes (id_ingrediente);
+alter table tb_cardapio add valor_pizza float;
+describe tb_cardapio;
+
 
 alter table tb_vendidos add dt_venda date;
 alter table tb_vendidos add valor_venda float;
@@ -47,20 +57,6 @@ alter table tb_vendidos add foreign key (id_pagamento) references tb_pagamento (
 show tables;
 select * from tb_vendidos;
 
-
-create table tb_cardapio(
-id_pizza integer not null auto_increment primary key,
-nome_pizza varchar(10),
-tipo_pizza varchar(10)
-
-)engine= Innodb default charset =utf8;
-drop table tb_cardapio;
-alter table tb_cardapio add id_ingrediente int;
-alter table tb_cardapio
-add foreign key (id_ingrediente)
-references tb_ingredientes (id_ingrediente);
-alter table tb_cardapio add valor_pizza float;
-describe tb_cardapio;
 
 create table tb_ingredientes(
 id_ingrediente int not null auto_increment primary key,
