@@ -33,11 +33,9 @@ id_venda int not null auto_increment primary key,
 CONSTRAINT id_cliente FOREIGN KEY (id_cliente) REFERENCES tb_cliente (id_cliente)
 )engine= Innodb default charset =utf8;
 
-
 create table tb_ingredientes(
 id_ingrediente int not null auto_increment primary key,
 nome_ingrediente varchar(10)
-
 );
 
 create table tb_cardapio(
@@ -56,7 +54,6 @@ create table tb_pagamento(
 id_pagamento int not null auto_increment primary key,
 f_pagamento varchar(10)
 )engine= Innodb default charset =utf8;
-drop table tb_pagamento;
 alter table tb_pagamento ADD dt_pagamento date;
 alter table tb_pagamento add valor_pago float;
 
@@ -66,7 +63,6 @@ alter table tb_vendidos add id_pizza int;
 alter table tb_vendidos add foreign key (id_pizza) references tb_cardapio (id_pizza);
 alter table tb_vendidos add id_pagamento int;
 alter table tb_vendidos add foreign key (id_pagamento) references tb_pagamento (id_pagamento);
-
 
 create table tb_entrega(
 id_entrega int not null auto_increment primary key

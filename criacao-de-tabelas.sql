@@ -37,7 +37,7 @@ id_pagamento int
 -- constraint id_pagamento foreign key (id_pagamento) references tb_pagamento (id_pagamento)-- linkando id_pagamento com tb_cardapio
 )engine= Innodb default charset = utf8mb4;
 
-create table tb_ingredientes(
+create table tb_ingrediente(
 id_ingrediente int not null auto_increment primary key,
 nome_ingrediente varchar(10)
 )engine= Innodb default charset = utf8mb4;
