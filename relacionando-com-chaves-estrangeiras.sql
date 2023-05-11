@@ -1,3 +1,5 @@
+#!/usr/bin/env sql
+
 /* Estabelecimento de uma relação entre tabelas (chave estranjeira id_cliente de tb_cliente para
 id_cliente de tb_venda). No momento da venda, precisamos deste dado do cliente*/
 alter table tb_venda

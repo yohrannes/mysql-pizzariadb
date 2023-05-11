@@ -1,3 +1,5 @@
+#!/usr/bin/env sql
+
 create database pizzaria;
 use pizzaria;
 show tables;

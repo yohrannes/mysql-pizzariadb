@@ -1,3 +1,5 @@
+#!/usr/bin/env sql
+
 create table tb_funcionario(
 id_funcionario integer auto_increment not null primary key,
 rg_funcionario integer,
