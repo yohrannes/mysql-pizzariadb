@@ -1,3 +1,3 @@
 # pizzariadb-mysql
 
-Repositório de base de dados desenvolvida inicialmente na faculdade, a cada dia melhor desenvolvido.
+Esta base de dados tem como objetivo consolidar conhecimentos em sql.
