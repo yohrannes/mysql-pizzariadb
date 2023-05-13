@@ -1,3 +1,7 @@
+CREATE DATABASE db_pizzaria;
+
+USE db_pizzaria;
+
 CREATE TABLE tb_funcionario
   (
      id_funcionario   INTEGER auto_increment NOT NULL PRIMARY KEY,
@@ -44,7 +48,7 @@ CREATE TABLE tb_venda
      id_pizza     INT,
      -- constraint id_pizza foreign key (id_pizza) references tb_cardapio (id_pizza), -- linkando id_pizza com tb_cardapio
      id_pagamento INT
-  -- constraint id_pagamento foreign key (id_pagamento) references tb_pagamento (id_pagamento)-- linkando id_pagamento com tb_cardapio
+     -- constraint id_pagamento foreign key (id_pagamento) references tb_pagamento (id_pagamento)-- linkando id_pagamento com tb_cardapio
   )
 engine= innodb
 DEFAULT charset = utf8mb4;
