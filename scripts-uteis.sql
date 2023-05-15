@@ -7,7 +7,7 @@ SET foreign_key_checks = 1;
 
 
 -- A) Totalize os clientes cadastrados
-select*from tb_cliente;
+select max (id_cliente) from tb_cliente;
  
 -- B)Exibir pizzas,ingredientes,valor do cardapio agrupadas por doce ou salgada
 select nome_pizza, id_ingrediente, valor_pizza from tb_cardapio order by tipo_pizza;
