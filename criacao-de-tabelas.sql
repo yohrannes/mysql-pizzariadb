@@ -22,7 +22,7 @@ CREATE TABLE tb_cliente
      numero       INTEGER,
      bairro       VARCHAR(20),
      sexo         VARCHAR(10),
-     cidade       VARCHAR(10),
+     cidade       VARCHAR(30),
      idade        INT
   )
 engine= innodb
@@ -61,8 +61,8 @@ DEFAULT charset = utf8mb4;
 CREATE TABLE tb_cardapio
   (
      id_pizza       INTEGER NOT NULL auto_increment PRIMARY KEY,
-     nome_pizzza    VARCHAR(10),
-     tipo_pizzza    VARCHAR(10),
+     nome_pizza    VARCHAR(10),
+     tipo_pizza    VARCHAR(10),
      id_ingrediente INT,
      valor_pizza    FLOAT
   )
@@ -74,7 +74,8 @@ CREATE TABLE tb_entrega
      id_entrega     INT NOT NULL auto_increment PRIMARY KEY,
      id_funcionario INTEGER,
      id_cliente     INTEGER,
-     id_venda       INTEGER
+     id_venda       INTEGER,
+     dt_entrega     DATE
   )
 engine= innodb
 DEFAULT charset = utf8mb4; 
