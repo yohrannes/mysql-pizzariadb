@@ -442,6 +442,58 @@ SET    dt_entrega = '2018-02-20'
 WHERE  id_entrega = 11;
 
 /* Inserindo dados na tabela tb_ingrediente */
+
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (12, 'parmesão');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (13, 'catupiry');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (14, 'frango');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (15, 'provolone');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (16, 'gorgonzola');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (17, 'lombo canadense');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (18, 'parmesão');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (19, 'palmito');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (20, 'presunto');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (21, 'ervilha');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (22, 'ovo');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (23, 'calabresa moida');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (24, 'milho');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (25, 'manjericão');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (26, 'alho');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (27, 'filé de tilápia');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (28, 'champignon');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (29, 'peito de peru');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (30, 'carne seca');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (31, 'ervilha');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (32, 'berinjela');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (33, 'alho poró');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (34, 'alcaparras');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (35, 'tomate seco');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (36, 'rúcula');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (37, 'escarola');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (38, 'brócolis');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (39, 'espinafre');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (40, 'peperone');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (41, 'creme de milho');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (42, 'camarão');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (43, 'bacalhau');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (44, 'aliche');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (45, 'chocolate ao leite');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (46, 'chocolate granulado');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (47, 'leite condensado');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (48, 'coco');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (49, 'canela');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (50, 'mel');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (51, 'açúcar');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (52, 'morango');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (53, 'chocolate');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (54, 'ameixa');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (55, 'banana');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (56, 'abacaxi');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (57, 'abacaxi');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (58, 'figo');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (59, 'pêssego');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (60, 'goiabada');
+insert into tb_ingrediente (id_ingrediente, nome_ingrediente) values (61, 'ricota');
+
 INSERT INTO tb_ingrediente
             (id_ingrediente,
              nome_ingrediente)
@@ -1065,3 +1117,12 @@ VALUES      (11,
 UPDATE tb_entrega
 SET    dt_entrega = '2018-01-01'
 WHERE  id_entrega = 1; 
+
+INSERT INTO tb_ingrediente
+            (id_ingrediente,
+             nome_ingrediente)
+VALUES      (8,
+             'brocolis');
+
+
+

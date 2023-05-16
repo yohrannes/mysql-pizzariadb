@@ -79,3 +79,21 @@ CREATE TABLE tb_entrega
   )
 engine= innodb
 DEFAULT charset = utf8mb4; 
+
+CREATE TABLE tb_preparo
+  (
+     id_preparo       INTEGER NOT NULL auto_increment PRIMARY KEY,
+	 id_pizza 		  INT,
+     id_ingrediente   INT
+  )
+engine= innodb
+DEFAULT charset = utf8mb4;
+
+CREATE TABLE tb_bordas
+  (
+     id_borda          INTEGER NOT NULL auto_increment PRIMARY KEY,
+	 tipo_borda 	   VARCHAR(30),
+     id_ingrediente    INT
+  )
+engine= innodb
+DEFAULT charset = utf8mb4;

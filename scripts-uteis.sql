@@ -5,6 +5,16 @@ FROM information_schema.KEY_COLUMN_USAGE
 WHERE CONSTRAINT_SCHEMA = 'nome_do_seu_banco_de_dados' AND REFERENCED_TABLE_NAME IS NOT NULL;
 SET foreign_key_checks = 1;
 
+/* Excluir determinada coluna de tabela */
+alter table tb_cardapio
+drop column id_ingrediente;
+
+/* Excluir determinada chave estrangeira de tabela */
+alter table tb_cardapio
+drop foreign key tb_cardapio_ibfk_2;
+
+
+/* Exerícios */
 
 -- A) Totalize os clientes cadastrados
 select max (id_cliente) from tb_cliente;
