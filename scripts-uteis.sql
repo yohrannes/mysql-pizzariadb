@@ -13,6 +13,11 @@ drop column id_ingrediente;
 alter table tb_cardapio
 drop foreign key tb_cardapio_ibfk_2;
 
+/* Todas as pizzas que iniciam com a */
+use db_pizzaria;
+select * from tb_cardapio;
+select nome_pizza from tb_cardapio where nome_pizza regexp '^a';
+show tables;
 
 /* Exerícios */
 
