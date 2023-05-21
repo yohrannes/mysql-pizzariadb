@@ -27,7 +27,14 @@ select max (id_cliente) from tb_cliente;
 -- B)Exibir pizzas,ingredientes,valor do cardapio agrupadas por doce ou salgada
 select nome_pizza, valor_pizza from tb_cardapio;
 select * from tb_cardapio;
+select * from tb_ingrediente;
+select * from tb_preparo;
 
+show tables;
+use db_pizzaria;
+
+alter table tb_cardapio add
+id_ingrediente int;
 
 
 -- C)Mostrar o total de pizzas vendidas por data

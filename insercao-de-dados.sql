@@ -1114,15 +1114,15 @@ VALUES      (11,
              11,
              11);
 
-UPDATE tb_entrega
-SET    dt_entrega = '2018-01-01'
-WHERE  id_entrega = 1; 
-
 INSERT INTO tb_ingrediente
             (id_ingrediente,
              nome_ingrediente)
 VALUES      (8,
              'brocolis');
 
+select * from tb_preparo;
+select nome_pizza from tb_cardapio;
+
+/* INSERT INTO tb_preparo (id_pizza, id_ingrediente) VALUES (1, 1); */
 
 
