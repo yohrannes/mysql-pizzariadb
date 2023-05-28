@@ -9,6 +9,9 @@ SET foreign_key_checks = 1;
 alter table tb_cardapio
 drop column id_ingrediente;
 
+/* Excluir todos os inserts de uma tabela */
+delete from tb_cardapio where id_pizza > 0;
+
 /* Excluir determinada chave estrangeira de tabela */
 alter table tb_cardapio
 drop foreign key tb_cardapio_ibfk_2;

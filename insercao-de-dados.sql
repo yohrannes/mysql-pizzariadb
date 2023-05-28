@@ -318,7 +318,8 @@ VALUES (10, 'portuguesa', 'salgada', 34.99);
 
 INSERT INTO tb_cardapio (id_pizza, nome_pizza, tipo_pizza, valor_pizza)
 VALUES (11, 'brigadeiro', 'doce', 24.99); 
-/* INSERT INTO tb_cardapio (id_pizza, nome_pizza, tipo_pizza, valor_pizza) values (12, 'mussarela', 'salgado', ) */
+
+INSERT INTO tb_cardapio (id_pizza, nome_pizza, tipo_pizza, valor_pizza) values (12, 'mussarela', 'salgado', '');
 
 /* Inserindo dados na tabela tb_pagamento*/
 INSERT INTO tb_pagamento (id_pagamento, form_pagamento, valor_pago)
