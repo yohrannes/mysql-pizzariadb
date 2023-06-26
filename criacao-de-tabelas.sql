@@ -89,7 +89,7 @@ CREATE TABLE tb_preparo
 engine= innodb
 DEFAULT charset = utf8mb4;
 
-CREATE TABLE tb_bordas
+CREATE TABLE tb_borda
   (
      id_borda          INTEGER NOT NULL auto_increment PRIMARY KEY,
 	 tipo_borda 	   VARCHAR(30),

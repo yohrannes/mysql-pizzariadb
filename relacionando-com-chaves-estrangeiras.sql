@@ -1,4 +1,4 @@
-/* Estabelecimento de uma relação um para muitos na tabela tb_venda*/
+	/* Estabelecimento de uma relação um para muitos na tabela tb_venda*/
 ALTER TABLE tb_venda
   ADD FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id_cliente);
 
@@ -18,14 +18,21 @@ ALTER TABLE tb_entrega
   FOREIGN KEY (id_cliente) REFERENCES tb_cliente (id_cliente);
   
 /* Estabelecimento de uma relação um para muitos na tabela tb_preparo */
-  
-ALTER TABLE tb_preparo
-  ADD FOREIGN KEY (id_ingrediente) REFERENCES tb_ingrediente (id_ingrediente);
-  
-ALTER TABLE tb_preparo
-  ADD FOREIGN KEY (id_pizza) REFERENCES tb_cardapio (id_pizza);
-  
-/* Estabelecimento de uma relação um para muitos na tabela tb_ingrediente */
 
 ALTER TABLE tb_preparo
   ADD FOREIGN KEY (id_ingrediente) REFERENCES tb_ingrediente (id_ingrediente);
+
+ALTER TABLE tb_preparo
+  ADD FOREIGN KEY (id_pizza) REFERENCES tb_cardapio (id_pizza);
+  
+ALTER TABLE tb_preparo
+  ADD FOREIGN KEY (id_borda) REFERENCES tb_cardapio (id_borda);
+
+/* Estabelecimento de uma relação um para muitos na tabela tb_ingrediente */
+
+ALTER TABLE tb_preparo
+	ADD FOREIGN KEY (id_ingrediente) REFERENCES tb_ingrediente (id_ingrediente);
+  
+ALTER TABLE tb_borda
+	ADD FOREIGN KEY (id_borda) REFERENCES tb_ingrediente (id_borda);
+
