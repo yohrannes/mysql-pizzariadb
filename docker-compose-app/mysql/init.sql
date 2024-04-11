@@ -1,4 +1,4 @@
-#!/usr/bin/env sql
+-- #!/usr/bin/env sql
 
 create database pizzaria;
 use pizzaria;
