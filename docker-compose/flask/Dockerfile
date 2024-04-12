@@ -1,13 +1,14 @@
-FROM python:3-alpine
+FROM python:3
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN apt-get update -y && \
+apt-get install -y python3-pip python3-dev
 
-COPY requirements.txt /usr/src/app/
-RUN pip install --no-cache-dir -r requirements.txt
+WORKDIR /app
 
-COPY . /usr/src/app
+RUN pip install Flask requests flask_mysqldb mysql-connector
+
+COPY . .
 
 EXPOSE 5000
 
-CMD [ "python", "./app.py" ]
+CMD ["python3", "./app.py"]

@@ -1,38 +1,28 @@
 import flask
 from flask import Flask, request, render_template, json, jsonify
 import requests
-from sqlalchemy.orm import declarative_base
-import sqlalchemy
-from fastapi import FastAPI, HTTPException
-from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+import mysql.connector
 
-app = FastAPI()
+app = flask.Flask(__name__)
+app.config["DEBUG"] = True
 
+database=mysql.connector.connect(host='localhost',user='root',passwd='jamaica',database='pizzaria') # Mudar de localhost para db depois
 
-SQLALCHEMY_DATABASE_URL = "mysql://root:jamaica@localhost/banco_locadora" # Mudar de localhost para db posteriormente
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base()
+#@app.route("/", methods=["GET"])
+#def index():
+#  data = requests.get('https://randomuser.me/api')
+#  return data.json()
 
-class Filme(Base):
-    __tablename__ = 'tb_filmes'
-    id = Column(Integer, primary_key=True)
-    titulo = Column(String(100), nullable=False)
+#@app.route("/inserthost", methods=['POST', 'GET'])
+#def inserthost():
+#  data = requests.get('https://randomuser.me/api').json()
+#  username = data['results'][0]['name']['first']
 
-@app.get("/filmes")
-def get_filmes():
+#  cursor=database.cursor()
+#  cursor.execute("""INSERT INTO users(name) VALUES(%s)""", (username,))
+#  database.commit()
 
-    # /filmes - [GET] deve retornar todos os filmes cadastrados.
-    # Retornando filmes já existentes no Bando de dados
-    db = SessionLocal()
-    print('Estes são os filmes que já estão no banco de dados.')
-    filmes = db.query(Filme).all()
-    filmes_list = [{'id': filme.id, 'titulo': filme.titulo} for filme in filmes]
-    db.close()
-    return filmes_list
+#  return username
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=5000)
+#if __name__ == "__main__":
+#  app.run(host="0.0.0.0", debug=True, port="5000")
